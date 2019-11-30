@@ -28,7 +28,6 @@
               "src/assets"
             ],
             "styles": [
-              "../node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss",
               "src/assets/css/stylesheet.css",
               "src/assets/css/slideshow.css",
