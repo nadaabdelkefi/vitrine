@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./full-layout.component.scss']
 })
 export class FullLayoutComponent implements OnInit {
-  
+
   constructor() { }
 
   ngOnInit() {
+ 
   }
+  
 
 }
