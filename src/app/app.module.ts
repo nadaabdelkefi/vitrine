@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { FullLayoutComponent } from './full-layout/full-layout.component';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
-import { HomeComponent } from './home/home/home.component';
+
+
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home/home.component';
     AppRoutingModule,
     UserModule,
     SharedModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

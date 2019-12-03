@@ -36,15 +36,15 @@
         </div>
         <div class="right">
           <h2>Returning Customer</h2>
-          <form enctype="multipart/form-data" method="post" action="">
+          <form enctype="multipart/form-data" (ngSubmit)="onLogin()" method="post" action="">
             <div class="content">
               <p>I am a returning customer</p>
-              <b>E-Mail Address:</b><br>
-              <input type="text" value="" name="email">
+              <b>E-Mail Address:</b> <br>
+              <input type="text"  value="" [(ngModel)]="utilisateur.email" name="email">
               <br>
               <br>
               <b>Password:</b><br>
-              <input type="password" value="" name="password">
+              <input type="password"  [(ngModel)]="utilisateur.password" value=""  name="password">
               <br>
               <a href="#">Forgotten Password</a><br>
               <br>
