@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { FullLayoutComponent } from './full-layout/full-layout.component';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
-import { HomeComponent } from './home/home/home.component';
-import {FormsModule} from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -20,9 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     UserModule,
-    SharedModule,
-    FormsModule,
-    ReactiveFormsModule
+    SharedModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
