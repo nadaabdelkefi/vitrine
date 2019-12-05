@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
       (data)=>{
         window.alert("account created!!!\n try to login");
         this.router.navigate(['/login']);
-
+        console.log(data);
       },
       (error)=> {
 
