@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 
 import {Config} from '../config';
 import { Utilisateur } from '../models/utilisateur';
+import { Token } from '../models/token';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,6 @@ export class UtilisateurService{
     }
 
     login(utilisateur:Utilisateur){
-      return this.httpClient.post(Config.baseUrl + "/utilisateur/login",utilisateur)
+      return this.httpClient.post<Token>(Config.baseUrl + "/utilisateur/login",utilisateur)
     }
 }
