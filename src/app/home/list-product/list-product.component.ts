@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ProduitService} from '../../shared/services/produit.service';
 import {Produit} from '../../shared/models/produit';
+import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { AchatService } from '../../shared/services/achat.service';
 
 declare var jQuery: any;
 
@@ -12,8 +15,9 @@ declare var jQuery: any;
 export class ListProductComponent implements OnInit {
 
   produits: Produit[] = [];
+  
 
-  constructor(private produitServices: ProduitService) {
+  constructor(private produitServices: ProduitService ,private achatService: AchatService) {
   }
 
   ngOnInit() {
@@ -106,6 +110,21 @@ export class ListProductComponent implements OnInit {
           return false;
       });
     });
+  }
+  commander(form: NgForm) {
+    const quantite = form.value['quantite'];
+    const produit_id = form.value['produit_id'];
+    const token = localStorage.getItem('token');
+
+    this.achatService.acheter(produit_id, quantite, token).subscribe(response => {
+      if (response['success']) {
+        Swal.fire({icon: 'success', title: 'Success!!', text: response['success']});
+      } else {
+        Swal.fire({icon: 'error', title: 'Erreur!!', text: response['error']});
+      }
+      console.log(response);
+    });
+    // console.log(quantite,produit_id,token);
   }
 
 }
